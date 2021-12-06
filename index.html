@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+	<title></title>
+<link href="css/bootstrap.min.css" rel="stylesheet"
+	type="text/css">
+<!-- bootstrap-date -->
+<link href="css/bootstrap-datetimepicker.css" rel="stylesheet"
+	type="text/css">
+<!-- 主样式 -->
+<link href="css/queryBuilder.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript"
+	src="js/bootstrap.min.js"></script>
+<!-- bootstrap-date -->
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+<!-- bootstrap-typeahead -->
+<script type="text/javascript" src="js/Bootstrap-3-Typeahead.js"></script>
+<!-- 全局参数文件 -->
+<script type="text/javascript" src="js/localPara.js"></script>
+<!-- 自定义方法文件 -->
+<script type="text/javascript" src="js/queryBuilder.method.js"></script>
+<!-- 主方法文件 -->
+<script type="text/javascript" src="js/jquery.queryBuilder.js" charset="utf-8"></script>
+<script type="text/javascript">
+	var total = 0;
+	$(function(){
+		$('#fangwenliang').html(++total)
+		$("#sql_builder").queryBuilder({
+			sourceData : sourceData1,//元数据
+			saveJson : saveJson1,//保存的查询结构
+			propertiesTypes:propertiesTypes1,//属性-类型-值 对应关系
+			submitButton:"submit_btn",
+			SQLButton:"SQL_btn",
+			SQL_reset:"SQL_reset",
+			onPageClicked: function( entity,property,type) { //当属性和key-value连接符发生变化时，触发
+//				alert(entity+'.....'+property);
+				return null;
+			},
+			onSQLBuild:function(returnVal,type){   //传入SQL结构和SQL语句
+				$('#result_sql').html(returnVal);
+				$('#myModal').modal();
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div style="text-align: center;">
+		<h2>QueryBuilder-jQuery 动态页面</h2>
+	</div>
+	<div class="mainDiv" id="sql_builder">
+	</div>
+		<div class="container-fluid" style="text-align: center;margin-top: 10px">
+			<div class="btn-group btn-group-sm" role="group" aria-label="...">
+				<button id="submit_btn" type="button" class="btn btn-primary">获取SQL结构</button>
+				<button id="SQL_btn" type="button" class="btn btn-primary">解析SQL</button>
+				<button id="SQL_reset" type="button" class="btn btn-primary">重置</button>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">结果显示</h4>
+				</div>
+				<div class="modal-body">
+					<pre   id="result_sql"></pre>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+.mainDiv{
+    text-align: center;
+    border:2px solid blue;
+    min-width:400px;
+}
+.builder_main{
+    margin:5px;
+    background-color:#f9f9f9;
+    border: 2px solid #d58512;
+}
+.group_left{
+    float:left;
+    text-align: left;
+}
+.group_right{
+    float: right;
+    text-align: right;
+}
+.l_op,.op_add{
+    text-align: left;
+}
+.l_op{
+    margin:5px;
+}
+.b_con {
+    height: 100%;
+    width: 100%;
+}
+.tb_con{
+    width: 100%;
+}
+.tb_con .td_l {
+    width: 300px;
+    min-width: 115px;
+}
+.tb_con .td_r {
+    border-left: 2px solid darkorange;
+    width: 80%;
+}
+.td_lf_div{
+    overflow: hidden;
+    clear: left;
+    height: 100%;
+}
+.td_lf_div div{
+    float: left;
+    position: relative;
+}
+.sin_con {
+    height: 40px;
+    overflow: hidden;
+    clear: left;
+    margin:5px 10px;
+}
+.sin_key,.sin_connect,.sin_val{
+    float: left;
+    /*position: relative;*/
+    border:4px solid #f9f9f9;
+    width: 30%;
+}
+
+.sin_op{
+    float: left;
+    position: relative;
+    border:4px solid #f9f9f9;
+    width: 10%;
+    line-height:30px;
+}
+.sin_op .del{
+    cursor: pointer;
+}
+
+
+.head {
+    /* for IE */
+    filter: alpha(opacity=50);
+    /* CSS 3 standard */
+    opacity: 0.5;
+}
+
+.error {
+    color: orangered;
+}
+.detail_info {
+    position: absolute;
+    display: none;
+}
+.fir_span{
+    width: 45%;
+    float:left;
+}
+.con_span{
+    line-height:35px;
+    font-size: 25px;
+    float:inherit;
+    width: 10%;
+}
+.sec_span{
+    width: 45%;
+    float:inherit;
+}
